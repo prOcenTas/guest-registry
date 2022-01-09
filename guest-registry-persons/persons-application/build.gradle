@@ -1,0 +1,17 @@
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	//testImplementation 'junit:junit'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.mockito:mockito-core'
+
+	implementation project(':guest-registry-common')
+	implementation project(':guest-registry-persons:persons-data')
+	implementation project(':guest-registry-persons:persons-services')
+	implementation project(':guest-registry-persons:persons-storage:persons-storage-api')
+	implementation project(':guest-registry-persons:persons-storage:persons-storage-mongodb-impl')
+}

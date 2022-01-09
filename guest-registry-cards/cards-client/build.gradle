@@ -1,0 +1,10 @@
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testImplementation 'junit:junit'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.mockito:mockito-core'
+	implementation project(':guest-registry-cards:cards-data')
+}

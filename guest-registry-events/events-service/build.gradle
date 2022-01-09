@@ -1,0 +1,14 @@
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.mongodb', name: 'bson', version: '4.4.0-beta2'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testImplementation 'junit:junit'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.mockito:mockito-core'
+
+	implementation project(':guest-registry-common')
+	implementation project(':guest-registry-events:events-data')
+	implementation project(':guest-registry-events:events-storage:events-storage-api')
+}

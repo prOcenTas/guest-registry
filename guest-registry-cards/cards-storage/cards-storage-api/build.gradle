@@ -1,0 +1,5 @@
+
+dependencies {
+	implementation project(':guest-registry-common')
+	implementation project(':guest-registry-cards:cards-data')
+}

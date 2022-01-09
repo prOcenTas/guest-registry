@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version "$LIB_SPRING_BOOT_VER"
+    id 'io.spring.dependency-management' version "$LIB_SPRING_BOOT_DEP_MNG_VER"
+}
+
+group = PROJECT_GROUP
+version = "$PROJECT_VERSION"
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = PROJECT_GROUP
+    version = "$PROJECT_VERSION"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    compileJava {
+        sourceCompatibility = SOURCE_COMPATIBILITY
+        targetCompatibility = TARGET_COMPATIBILITY
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:$LIB_SPRING_BOOT_VER")
+            mavenBom("org.junit:junit-bom:$LIB_JUNIT_JUPITER_VER")
+        }
+    }
+
+    dependencies {
+        annotationProcessor("org.projectlombok:lombok")
+        implementation("org.projectlombok:lombok")
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

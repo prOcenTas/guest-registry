@@ -1,0 +1,15 @@
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'net.sf.dozer:dozer:5.5.1'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testImplementation 'junit:junit'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.mockito:mockito-core'
+	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+
+	implementation project(':guest-registry-common')
+	implementation project(':guest-registry-persons:persons-data')
+	implementation project(':guest-registry-persons:persons-storage:persons-storage-api')
+}
